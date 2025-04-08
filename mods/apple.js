@@ -1,11 +1,10 @@
-elements.neutron_generator = {
-  color: "#FFFFFF",
-  behavior: behaviors.WALL,
-  behaviorOn: [
-    "XX|CR:proton|XX",
-    "CR:proton|XX|CR:proton",
-    "XX|CR:proton|XX"
+elements.hypernuke = {
+  color: "#FF0000",
+  behavior: [
+    "XX|XX|XX",
+    "XX|XX|XX",
+    "XX|M1 AND EX:25>explosion|XX"
   ],
-  category: "machines",
+  category: "weapons",
   conduct: 1
 }
