@@ -1,8 +1,10 @@
-elements.apple = {
-  color: "#FF0000",
+elements.neutron_generator = {
+  color: "#FFFFFF",
   behavior: behaviors.WALL,
-  category: "food",
-  reactions: {
-    "beans": {elem1: "supernova", elem2: null}
-  }
+  behaviorOn: [
+    "XX|CR:proton|XX",
+    "CR:proton|XX|CR:proton",
+    "XX|CR:proton|XX"
+    ]
+  category: "machines"
 }
