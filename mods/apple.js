@@ -3,6 +3,6 @@ elements.apple = {
   behavior: behaviors.WALL,
   category: "food",
   reactions: {
-    "bean": {elem1: "supernova", elem2: null}
+    "beans": {elem1: "supernova", elem2: null}
   }
 }
