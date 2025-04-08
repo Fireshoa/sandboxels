@@ -7,6 +7,7 @@ elements.super_bomb = {
     "XX|XX|XX",
     "XX|XX|XX",
     "M2|M1 AND EX:10>explosion|M2"
-  ]
+  ],
+  category: "nukes"
 }
 elements.wire.reactions.water = {elem1: "explosion", elem2: "gold_coin"}
