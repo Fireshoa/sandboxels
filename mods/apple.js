@@ -5,6 +5,5 @@ elements.hypernuke = {
     "XX|XX|XX",
     "XX|M1 AND EX:25>explosion|XX"
   ],
-  category: "weapons",
-  conduct: 1
+  category: "weapons"
 }
