@@ -6,7 +6,7 @@ elements.super_bomb = {
   behavior: [
     "XX|XX|XX",
     "XX|XX|XX",
-    "M2|M1 AND EX:10>explosion|M2"
+    "M2|M1 AND EX:50>explosion|M2"
   ],
   category: "nukes"
 }
