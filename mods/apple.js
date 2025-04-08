@@ -5,6 +5,6 @@ elements.neutron_generator = {
     "XX|CR:proton|XX",
     "CR:proton|XX|CR:proton",
     "XX|CR:proton|XX"
-    ]
+  ],
   category: "machines"
 }
