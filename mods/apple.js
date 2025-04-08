@@ -9,7 +9,7 @@ elements.neutron_generator = {
     "XX|CR:neutron|XX",
     "CR:neutron|XX|CR:neutron",
     "XX|CR:neutron|XX"
-  ]
+  ],
   category: "weapons"
 }
   
