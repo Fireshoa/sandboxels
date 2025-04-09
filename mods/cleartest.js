@@ -49,7 +49,25 @@ elements.clay = {
   ],
   tempHigh: 2000,
   stateHigh: "rock",
-  category: "Other"
+  category: "Creation"
+}
+elements.kiln_heater = {
+  color: "#f07f64",
+  behavior: [
+    "XX|HT:20|XX",
+    "XX|XX|XX",
+    "XX|XX|XX"
+  ],
+  category: "Creation"
+}
+elements.kiln_wall = {
+  color: "#c07f64",
+  behavior: [
+    "XX|XX|XX",
+    "XX|XX|XX",
+    "XX|XX|XX"
+  ],
+  category: "Creation"
 }
 // Life
 elements.grass = {
