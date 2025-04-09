@@ -19,4 +19,13 @@ elements.nuker = {
   ],
   category: "Nukes"
 }
+elements.anti_nuke = {
+  color: "#000000",
+  behavior: [
+  "XX|XX|XX",
+  "XX|XX|XX",
+  "M2|M1 AND EX:50>dirt|M2"
+  ],
+  category: "Nukes"
+}
 elements.wire.reactions.water = {elem1: "explosion", elem2: "gold_coin"}
