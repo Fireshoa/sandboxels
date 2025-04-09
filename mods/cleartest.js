@@ -58,3 +58,32 @@ elements.roots = {
   ],
   category: "Life"
 }
+
+// Destruction
+elements.fire = {
+  color: "#FF0000",
+  behavior: [
+    "M1|M1|M1",
+    "M2|XX|M2",
+    "XX|XX|XX"
+  ],
+  category: "Destruction"
+}
+elements.bomb = {
+  color: "#EEEEEE",
+  behavior: [
+    "XX|XX|XX",
+    "XX|XX|XX",
+    "XX|M1 AND EX:fire>10|XX"
+  ],
+  category: "Destruction"
+}
+elements.nuke = {
+  color: "#77EE77",
+  behavior: [
+    "XX|XX|XX",
+    "XX|XX|XX",
+    "XX|M1 AND EX:fire>50|XX"
+  ],
+  category: "Destruction"
+}
