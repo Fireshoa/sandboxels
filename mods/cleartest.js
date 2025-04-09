@@ -39,6 +39,17 @@ elements.water = {
   category: "Basic"  
 }
 
+// Creation
+elements.clay = {
+  color: "#d08f74",
+  behavior: [
+    "XX|XX|XX",
+    "SA|XX|SA",
+    "M2|M1|M2"
+  ],
+  tempHigh: 2000,
+  stateHigh: "rock"
+}
 // Life
 elements.grass = {
   color: "#00FF00",
@@ -67,7 +78,8 @@ elements.fire = {
     "M2|DL%0.1|M2",
     "XX|M1|XX"
   ],
-  category: "Destruction"
+  category: "Destruction",
+  temp: 1000
 }
 elements.bomb = {
   color: "#EEEEEE",
