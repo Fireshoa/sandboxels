@@ -107,7 +107,8 @@ elements.fire = {
     "XX|M1|XX"
   ],
   category: "Destruction",
-  temp: 1000
+  temp: 1000,
+  state: "gas"
 }
 elements.bomb = {
   color: "#EEEEEE",
