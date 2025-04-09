@@ -48,7 +48,8 @@ elements.clay = {
     "M2|M1|M2"
   ],
   tempHigh: 2000,
-  stateHigh: "rock"
+  stateHigh: "rock",
+  category: "Other"
 }
 // Life
 elements.grass = {
@@ -63,10 +64,11 @@ elements.grass = {
 elements.jeff = {
   color: "#FFFFFF",
   behavior: [
-    "XX|M2%1|XX",
     "M2|XX|M2",
+    "M1%10|XX|M1%10",
     "M1|M1|M1"
-  ]
+  ],
+  category: "Other"
 }
 elements.roots = {
   color: "#622A0F",
@@ -117,4 +119,15 @@ elements.smoke = {
     "XX|M1|XX"
   ],
   category: "Other"
+}
+
+// random ahh suggestions
+elements.bus = {
+  name: "B U S",
+  behavior: [
+    "XX|XX|DL",
+    "XX|XX|M2 AND DL AND EX:75>nuke",
+    "XX|M1|DL"
+  ],
+  category: "Random"
 }
