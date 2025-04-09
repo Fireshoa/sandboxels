@@ -1,7 +1,51 @@
 elements = {};
-behaviors = {};
-elements.test = {
-  color: "#ffffff",
+
+// Basic
+elements.rock = {
+  color: "#cccccc",
   behavior: behaviors.WALL,
   category: "Basic",
 };
+elements.dirt = {
+  color: "#402F1D",
+  behavior: [
+    "XX|XX|XX",
+    "XX|XX|XX",
+    "M2|M1|M2"
+  ],
+  category: "Basic",
+  reactions: {
+    "water": {elem1: "mud", elem2: null},
+  }
+}
+elements.mud = {
+  color: "#362312",
+  behavior: [
+    "XX|XX|XX",
+    "XX|XX|XX",
+    "XX|M1|XX"
+  ],
+  category: "Basic",
+  tempHigh: 100,
+  stateHigh: "dirt"
+}
+elements.water = {
+  color: "#0000FF",
+  behavior: [
+    "XX|XX|XX",
+    "M2|XX|M2",
+    "M1|M1|M1"
+  ],
+  category: "Basic"  
+}
+
+// Life
+elements.grass = {
+  color: "#00FF00",
+  behavior: [
+    "XX|CR:grass%0.5|XX",
+    "XX|XX|XX",
+    "XX|M1|XX"
+  ],
+  category: "Life"
+}
