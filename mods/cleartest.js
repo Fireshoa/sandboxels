@@ -74,7 +74,7 @@ elements.bomb = {
   behavior: [
     "XX|XX|XX",
     "XX|XX|XX",
-    "XX|M1 AND EX:fire>10|XX"
+    "XX|M1 AND EX:10>fire|XX"
   ],
   category: "Destruction"
 }
@@ -83,7 +83,7 @@ elements.nuke = {
   behavior: [
     "XX|XX|XX",
     "XX|XX|XX",
-    "XX|M1 AND EX:fire>50|XX"
+    "XX|M1 AND EX:50>fire|XX"
   ],
   category: "Destruction"
 }
