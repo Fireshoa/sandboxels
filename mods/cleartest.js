@@ -45,7 +45,16 @@ elements.grass = {
   behavior: [
     "XX|CR:grass%0.5|XX",
     "XX|XX|XX",
-    "XX|M1|XX"
+    "XX|M1 AND CH:dirt>roots|XX"
+  ],
+  category: "Life"
+}
+elements.roots = {
+  color: "#622A0F",
+  behavior: [
+    "XX|XX|XX",
+    "XX|XX|XX",
+    "CH:dirt>roots%0.1|CH:dirt>roots%0.1|CH:dirt>roots%0.1"
   ],
   category: "Life"
 }
