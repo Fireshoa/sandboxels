@@ -60,6 +60,14 @@ elements.grass = {
   ],
   category: "Life"
 }
+elements.jeff = {
+  color: "#FFFFFF",
+  behavior: [
+    "XX|M2%1|XX",
+    "M2|XX|M2",
+    "M1|M1|M1"
+  ]
+}
 elements.roots = {
   color: "#622A0F",
   behavior: [
