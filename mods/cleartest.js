@@ -85,7 +85,7 @@ elements.fire = {
   color: "#FF0000",
   behavior: [
     "M1|M1|M1",
-    "M2|DL%0.1|M2",
+    "M2|DL%5|M2",
     "XX|M1|XX"
   ],
   category: "Destruction",
@@ -115,7 +115,7 @@ elements.smoke = {
   color: "#888888",
   behavior: [
     "M1|M1|M1",
-    "M2|DL%0.1|M2",
+    "M2|DL%5|M2",
     "XX|M1|XX"
   ],
   category: "Other"
