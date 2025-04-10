@@ -19,9 +19,6 @@ document.onkeydown = function(ki)/*keyboard_input*/ {
         KS = true;
         //vY ++;
     }
-    if (ki.keyCode == 69) {
-        PL = true;
-    }
 }
 document.onkeyup = function(i2)/*keyboard_input*/ {
     //a
@@ -44,24 +41,14 @@ document.onkeyup = function(i2)/*keyboard_input*/ {
         KS = false;
         //vY = 0;
     }
-    if (i2.keyCode == 69) {
-        PL = false;
-    }
 }
 var KA = false;
 var KD = false;
 var KW = false;
 var KS = false;
-var PL = false;
 var vX = 1;
 var vY = 1;
-var SX = 0;
-var SY = 0;
 elements.c_pixel = {
-    onPlace: function(pixel) {
-        SX = pixel.x;
-        SY = pixel.y;
-    },
     tick: function(pixel) {
     /*if (vX === 3) {
             vX --;
@@ -81,11 +68,9 @@ elements.c_pixel = {
     if (KS === true) {
             tryMove (pixel,pixel.x,pixel.y+vY)
         }
-    if (PL === true) {
-            trymove (pixel,SX,SY)
-    }
     },
     category: "special",
     states:"solid",
-    color:"#FF00FF",
+    color:"#FFFFFF",
+    conduct: 50
 }
