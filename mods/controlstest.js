@@ -72,5 +72,5 @@ elements.c_pixel = {
     category: "special",
     states:"solid",
     color:"#FFFFFF",
-    conduct: 50
+    conduct: 1
 }
