@@ -55,12 +55,12 @@ var KS = false;
 var PL = false;
 var vX = 1;
 var vY = 1;
-var sX = 0;
-var sY = 0;
+var SX = 0;
+var SY = 0;
 elements.c_pixel = {
     onPlace: function(pixel) {
-        sX = pixel.x;
-        sY = pixel.y;
+        SX = pixel.x;
+        SY = pixel.y;
     },
     tick: function(pixel) {
     /*if (vX === 3) {
@@ -82,7 +82,7 @@ elements.c_pixel = {
             tryMove (pixel,pixel.x,pixel.y+vY)
         }
     if (PL === true) {
-            trymove (pixel,0,0)
+            trymove (pixel,SX,SY)
     }
     },
     category: "special",
