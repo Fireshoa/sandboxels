@@ -9,7 +9,7 @@ elements.test = {
   color: "#FF00FF",
   behavior: behaviors.POWDER,
   category: "Testing",
-  renderer: customrender.TALL
+  renderer: customrender.Tall
 }
 // Basic
 elements.rock = {
