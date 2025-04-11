@@ -86,7 +86,7 @@ elements.jeff = {
     "M1%10|XX|M1%10",
     "M1|M1|M1"
   ],
-  category: "Other"
+  category: "Life"
 }
 elements.roots = {
   color: "#622A0F",
