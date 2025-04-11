@@ -1,5 +1,16 @@
 elements = {};
-
+customrender = {};
+customrender.Tall = function(pixel,ctx) {
+    drawSquare(ctx, pixel.color, pixel.x, pixel.y);
+    drawSquare(ctx, pixel.color, pixel.x, pixel.y+1);
+  }
+// Testing
+elements.test = {
+  color: "#FF00FF",
+  behavior: behaviors.POWDER,
+  category: "Testing",
+  renderer: customrender.TALL
+}
 // Basic
 elements.rock = {
   color: "#cccccc",
