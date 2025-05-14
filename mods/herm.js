@@ -134,7 +134,7 @@ elements.the_king = {
     color: '#FF0000',
     behavior: [
         'CR:the_king|CR:the_king|CR:the_king',
-        'CR:the_king|EX:50%1|CR:the_king',
+        'CR:the_king|EX:10%0.1|CR:the_king',
         'M2 AND CR:the_king|M1|M2 AND CR:the_king'
     ],
     category: 'bombs'
