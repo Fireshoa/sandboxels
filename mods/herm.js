@@ -90,7 +90,6 @@ elements.molten_karminium = {
 elements.molten_gold.reactions.molten_steel = {elem1: 'karminium', elem2: 'karminium'}
 elements.potassium.reactions.ice_nine = {elem1: 'corruption', elem2: 'explosion'}
 
-elements.
 // WEAPONS
 elements.death_beam = {
     color: '#FFFFFF',
@@ -128,6 +127,15 @@ elements.world_ender = {
         'XX|XX|XX',
         'XX|XX|XX',
         'M2|M1 AND EX:400%0.01|M2'
+    ],
+    category: 'bombs'
+}
+elements.the_king = {
+    color: '#FF0000',
+    behavior: [
+        'CR:the_king|CR:the_king|CR:the_king',
+        'CR:the_king|EX:50%1|CR:the_king',
+        'M2 AND CR:the_king|M1|M2 AND CR:the_king'
     ],
     category: 'bombs'
 }
