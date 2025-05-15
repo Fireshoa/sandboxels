@@ -41,11 +41,34 @@ elements.corruption = {
     category: 'special',
     hardness: 1,
     reactions: {
-        'diamond_gas': {elem1: 'hyper_corruption', elem2: null}
+        'diamond_gas': {elem1: 'hyper_corruption', elem2: null},
+        'gunpowder': {elem1: 'unstable_corruption', elem2: null},
+        'acid': {elem1: 'acidic_corruption'}
     }
 }
-elements.hyper_corruption = {
+elements.acidic_corruption = {
+    color: '#00FF00',
+    behavior: [
+        'XX|CR:acidic_corruption%0.5 AND DL%10|XX',
+        'M2%1 AND CR:acidic_corruption%0.5 AND DL%10|XX|M2%1 AND CR:acidic_corruption%0.5 AND DL%10',
+        'M1|M1 AND CR:acidic_corruption%0.5 AND DL%10|M1',
+    ],
+    category: 'special',
+    hardness: 0.9
+}
+elements.unstable_corruption = {
     color: '#EEFFFF',
+    ignore: 'hardened_karminium',
+    behavior: [
+        'XX|CR:unstable_corruption%1 AND DL|XX',
+        'M2%1 AND CR:unstable_corruption%1 AND DL|EX:50%0.01|M2%1 AND CR:unstable_corruption%1 AND DL',
+        'M1|M1 AND CR:unstable_corruption%1 AND DL|M1',
+    ],
+    category: 'special',
+    hardness: 1
+}
+elements.hyper_corruption = {
+    color: '#DDFFFF',
     ignore: 'hardened_karminium',
     behavior: [
         'XX|CR:hyper_corruption%5 AND DL|XX',
@@ -90,6 +113,15 @@ elements.molten_karminium = {
 elements.molten_gold.reactions.molten_steel = {elem1: 'karminium', elem2: 'karminium'}
 elements.potassium.reactions.ice_nine = {elem1: 'corruption', elem2: 'explosion'}
 
+elements.stone_ziggurat = {
+    color: '000000',
+    behavior: [
+        'XX|XX|XX',
+        'XX|CH:stone_ziggurat>rock_wall|XX',
+        'CR:stone_ziggurat|CR:stone_ziggurat|CR:stone_ziggurat'
+    ],
+    category: 'special'
+}
 // WEAPONS
 elements.death_beam = {
     color: '#FFFFFF',
@@ -127,15 +159,6 @@ elements.world_ender = {
         'XX|XX|XX',
         'XX|XX|XX',
         'M2|M1 AND EX:400%0.01|M2'
-    ],
-    category: 'bombs'
-}
-elements.the_king = {
-    color: '#FF0000',
-    behavior: [
-        'CR:the_king|CR:the_king|CR:the_king',
-        'CR:the_king|EX:10%0.1|CR:the_king',
-        'M2 AND CR:the_king|M1|M2 AND CR:the_king'
     ],
     category: 'bombs'
 }
@@ -209,3 +232,79 @@ elements.slime_feed = {
     category: 'slime',
     state: 'gas'
 }
+
+
+
+/*
+survivalShop = {
+    "dirt*25": 25,
+    "water*25": 250,
+    "ammonia*25": 500,
+    "seeds*1": 500,
+    "sapling*1": 500,
+    "pinecone*1": 500,
+    "tnt*25": 1000,
+    "worm*1": 1000,
+    "bee*1": 5000,
+    "primordial_soup*5": 10000,
+    "human*1": 50000,
+    "sun*1": 500000,
+}
+
+elementWorth = {
+    "gold_coin": 1,
+    "diamond": 100,
+    "ketchup": 15,
+    "jelly": 10,
+    "soda": 10,
+    "toast": 10,
+    "oil": 10,
+    "bread": 3,
+    "glass": 5,
+    "rad_glass": 6,
+    "glass_shard": 2,
+    "rad_shard": 3,
+    "paper": 5,
+    "broth": 5,
+    "honey": 5,
+    "caramel": 5,
+    "sap": 4,
+    "candy": 5,
+    "popcorn": 2,
+    "flour": 2,
+    "lettuce": 2,
+    "sauce": 2,
+    "wood": 0.2,
+    "tree_branch": 0.1,
+    "plant": 0.1,
+    "mushroom_cap": 0.1,
+    "mushroom_gill": 0.3,
+    "vine": 0.1,
+    "cactus": 0.1,
+    "cloner": 0,
+    "wall": 0,
+    "fire": 0,
+    "smoke": 0,
+    "plasma": 0,
+    "light": 0,
+    "laser": 0,
+    "liquid_light": 0.1,
+    "flash": 0,
+    "radiation": 0,
+    "petal": -1,
+    "cell": -1,
+    "cancer": -1,
+    "foam": -1,
+}
+
+if (!settings.survival) {
+    settings.survival = {
+        "wall": 999,
+        "dirt": 999,
+        "sapling": 1,
+        "seeds": 5,
+        "ice": 25,
+        "cloner": 1,
+    }
+}
+*/
