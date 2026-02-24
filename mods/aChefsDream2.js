@@ -3,7 +3,7 @@
 // https://github.com/SquareScreamYT/
 // https://youtube.com/@sqec
 
-version = "v2.1.0"
+version = "v2.1.1"
 
 runAfterLoad(function() {
     console.log("Current aChefsDream version: "+version)
@@ -312,6 +312,7 @@ elements.tea_leaves = {
   stateHigh: ["fire","smoke","smoke","smoke","ash"],
   tempLow: -2,
   stateLow: "frozen_plant",
+  breakInto: "matcha_powder",
   burn:10,
   burnTime:300,
   burnInto: ["fire","smoke","smoke","smoke","smoke","smoke","smoke","fragrance"],
@@ -593,6 +594,222 @@ elements.pistachio_powder = {
   tempHigh: 250,
   stateHigh: ["ash", "smoke"],
   hidden: true
+}
+
+elements.pumpkin_mash = {
+	color: ["#f59c2f", "#efa810", "#e38f1a"],
+	behavior: behaviors.STURDYPOWDER,
+	tempHigh: 125,
+	stateHigh: ["pumpkin_spice","pumpkin_spice","smoke"],
+	category: "food",
+	state: "liquid",
+	density: 500,
+	isFood: true,
+	hidden: true,
+}
+
+elements.pumpkin.breakInto = ["pumpkin_seed", "pumpkin_mash", "pumpkin_mash", "pumpkin_mash", "pumpkin_mash", null];
+
+elements.pumpkin_spice = {
+	color: ["#95570b", "#ba7f36"],
+	behavior: behaviors.POWDER,
+	tempHigh: 400,
+	stateHigh: ["smoke","smoke","smoke","smoke","ash"],
+	category: "food",
+	state: "solid",
+	density: 500,
+	isFood: true,
+	hidden: true,
+}
+
+elements.cinnamon_powder.reactions.nutmeg_powder = { elem1: "pumpkin_spice", elem2: null, chance: 0.5 };
+
+elements.coffee.reactions.pumpkin_mash = { elem2: null, color1: "#7e3c09", chance: 0.005 };
+elements.coffee.reactions.pumpkin_spice = { elem2: null, color1: "#7e3c09", chance: 0.005 };
+
+elements.nutmeg_wood = {
+    color: "#6B4226",
+    behavior: behaviors.WALL,
+    tempHigh: 400,
+    stateHigh: ["ember", "charcoal", "fire"],
+    category: "solids",
+    burn: 5,
+    burnTime: 300,
+    burnInto: ["ember", "charcoal", "fire"],
+    state: "solid",
+    hardness: 0.2,
+    breakInto: "sawdust",
+    hidden: true
+};
+
+elements.nutmeg_branch = {
+    color: "#5c3b23",
+    behavior: [
+        "CR:nutmeg_leaves,nutmeg_branch%2|CR:nutmeg_leaves,nutmeg_branch%2|CR:nutmeg_leaves,nutmeg_branch%2",
+        "XX|XX|XX",
+        "XX|XX|XX",
+    ],
+    tempHigh: 100,
+    stateHigh: "nutmeg_wood",
+    tempLow: -30,
+    stateLow: "nutmeg_wood",
+    category: "life",
+    burn: 30,
+    burnTime: 60,
+    burnInto: ["sap", "ember"],
+    hidden: true,
+    state: "solid",
+    density: 1400,
+    breakInto: ["sap", "sawdust"]
+};
+
+elements.nutmeg_leaves = {
+    color: ["#4b7d3d", "#558c40"],
+    behavior: [
+        "XX|XX|XX",
+        "XX|XX|XX",
+        "XX|CR:nutmeg_fruit%0.1|XX",
+    ],
+    reactions: {
+        "vinegar": { elem1: "dead_plant", chance: 0.035 },
+        "baking_soda": { elem1: "dead_plant", chance: 0.01 },
+        "bleach": { elem1: "dead_plant", chance: 0.05 },
+        "alcohol": { elem1: "dead_plant", chance: 0.035 },
+    },
+    category: "life",
+    tempHigh: 90,
+    stateHigh: "dead_plant",
+    tempLow: -1.5,
+    stateLow: "frozen_plant",
+    burn: 60,
+    burnTime: 60,
+    burnInto: "dead_plant",
+    state: "solid",
+    density: 1050,
+    hidden: true
+};
+
+elements.nutmeg_fruit = {
+    color: ["#c0a25d", "#ddb86c"],
+    behavior: behaviors.POWDER,
+    category: "food",
+    tempHigh: 100,
+    stateHigh: "dead_plant",
+    burn: 60,
+    burnTime: 60,
+    cutInto: ["mace", "nutmeg", "nutmeg"],
+    breakInto: ["mace", "nutmeg", "nutmeg"],
+    state: "solid",
+    density: 1050
+};
+
+elements.mace = {
+    color: ["#e04e1b", "#cc3614"],
+    behavior: behaviors.POWDER,
+    category: "food",
+    tempHigh: 250,
+    stateHigh: ["ash", "smoke"],
+    isFood: true,
+    state: "solid",
+    density: 900,
+    hidden: false
+};
+
+elements.nutmeg = {
+    color: ["#8b5a2b", "#A0522D"],
+    behavior: behaviors.POWDER,
+    category: "food",
+    tempHigh: 250,
+    stateHigh: ["ash", "smoke"],
+    isFood: true,
+    state: "solid",
+    density: 1000,
+    breakInto: "nutmeg_powder",
+};
+
+elements.nutmeg_powder = {
+    color: "#C58940",
+    behavior: behaviors.POWDER,
+    category: "food",
+    tempHigh: 250,
+    stateHigh: ["ash", "smoke"],
+    isFood: true,
+    state: "solid",
+    density: 950,
+    hidden: false
+};
+
+elements.matcha_powder = {
+  color: ["#a8dd3e","#b2c653", "#c0d55e"],
+  reactions: {
+    "water": { elem2:"matcha", tempMin:80 },
+    "salt_water": { elem2:"matcha", tempMin:80 },
+    "sugar_water": { elem2:"matcha", tempMin:80 },
+    "seltzer": { elem2:"matcha", tempMin:80 },
+    "stench": { elem2:null, chance:0.25 },
+    "steam": { elem2:"fragrance", chance:0.1 },
+    "flea": { elem2:null, chance:0.01 },
+    "termite": { elem2:null, chance:0.01 },
+    "fly": { elem2:null, chance:0.01 },
+    "ant": { elem2:null, chance:0.01 },
+    "stink_bug": { elem2:null, chance:0.01 },
+  },
+  behavior: behaviors.POWDER,
+  tempHigh: 90,
+  stateHigh: ["matcha","foam","foam","fragrance"],
+  burn:10,
+  burnTime:300,
+  burnInto: ["fire","smoke","smoke","smoke","smoke","smoke","smoke","fragrance"],
+  category:"food",
+  state: "solid",
+  density: 1400,
+  isFood: true,
+}
+
+elements.matcha = {
+	color: "#74A12E",
+	behavior: behaviors.LIQUID,
+	reactions: {
+		"stench": { elem2:null },
+		"flea": { elem2:null, chance:0.01 },
+		"oxygen": { elem2:"fragrance", chance:0.01 },
+		"infection": { elem2:"blood", chance:0.005 },
+		"plague": { elem2:null, chance:0.004 },
+		"sugar": { elem2:null, color1:"#8f5a21", chance:0.005},
+		"honey": { elem2:null, color1:"#8f5a21", chance:0.005},
+		"milk": { elem2:null, color1:"#9c6c38", chance:0.005},
+		"nut_milk": { elem2:null, color1:"#9c6c38", chance:0.005},
+		"fruit_milk": { elem2:null, color1:"#9c5938", chance:0.005},
+		"chocolate_milk": { elem2:"foam", color1:"#784b1a", chance:0.005},
+		"strawberry_jam": { elem2:"foam", color1:"#FC9FB1", chance:0.005},
+		"pilk": { elem2:"foam", color1:"#9c7954", chance:0.005},
+		"cream": { elem2:null, color1:"#9c6c38", chance:0.005},
+		"ice_cream": { elem2:null, color1:"#9c6c38", chance:0.005},
+		"tea": { elem2:"bubble", color2:"#87633d", attr2:{"clone":"tea"}, chance:0.001, tempMin:80 },
+		"paper": { stain2:"#6c4317", chance:0.1 }
+	},
+	tempHigh: 125,
+	stateHigh: ["steam","fragrance",null],
+	temp: 70,
+	tempLow: 0,
+	category:"liquids",
+	state: "liquid",
+	density: 1001,
+	stain: -0.1,
+	hidden: true,
+	isFood: true
+}
+
+elements.meringue = {
+  color: "#faf6ed",
+  behavior: behaviors.STURDYPOWDER,
+  tempHigh: 186,
+  stateHigh: ["steam","smoke"],
+  viscosity: 1.5,
+  category: "food",
+  state: "solid",
+  density: 1036.86,
+  isFood: true
 }
 
 },true)
